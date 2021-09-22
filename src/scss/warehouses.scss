@@ -1,125 +1,3 @@
-/*@import "~normalize.css";*/
-
-@font-face {
-	font-family: 'Roboto';
-	src: url("/fonts/Roboto-Regular.ttf") format('truetype');
-}
-
-button, html, input, select, textarea {
-	color: #000;
-	font-family: Roboto,sans-serif;
-	font-style: normal;
-}
-
-p {
-    padding: 0;
-    margin: 0;
-}
-.stores-map-section {
-    display: flex;
-    margin: 50px;
-    border: 1px solid #E5E5E5;
-    border-radius: 6px;
-   
-}
-
-
-.select {
-    position: relative;
-
-    &_is-active {
-        .select__body {
-            display: block;
-        }
-    }
-
-    &__header {
-        display: flex;
-        background: #F2F2F2;
-        cursor: pointer;
-        height: 48px;
-        padding: 10px 12px 6px 14px;
-        margin: 22px 20px 0px 20px;
-        box-sizing: border-box;
-        width: 320px;
-        border-radius: 4px;
-
-        &_active {
-            border-radius: 4px 4px 0 0;
-        }
-
-    }
-
-    &__current {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-    }
-
-    &__title {
-        font-weight: 400;
-        font-size: 16px;
-    }
-
-    &__description {
-        font-weight: 400;
-        font-size: 12px;
-        color: #808080;
-    }
-
-    &__icon {
-        margin-left: auto;
-        width: 14px;
-    }
-
-    &__body {
-        margin: 0 20px;
-        display: none;
-        max-height: 310px;
-        overflow-y: scroll;
-        width: 320px;
-        position: absolute;
-        background: #fff;
-        border-radius: 0 0 4px 4px;
-
-        &::-webkit-scrollbar{
-            width: 16px;           
-        }
-
-        &::-webkit-scrollbar-thumb {
-            border: 5px solid rgba(0, 0, 0, 0);
-            background-clip: padding-box;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-    }
-
-    &__item {
-        padding-left: 14px;
-        padding-right: 12px;
-        height: 48px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        cursor: pointer;
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:hover {
-            background: #F2F2F2;
-        }
-    }
-}
-
-.stores-map {
-    flex-grow: 1;
-    max-height: 680px;
-}
-
 .stores {
     max-width: 360px;
     border-radius: 6px 0 0 6px;
@@ -148,7 +26,7 @@ p {
 
     
 
-    &__warehauses {
+    &__warehouses {
         height: 550px;
         overflow: scroll;
         margin-right: 5px;
@@ -164,7 +42,7 @@ p {
         }
     }
 
-    &__warehaus {
+    &__warehouse {
 
         &-item {
             border-top: 1px solid transparent;

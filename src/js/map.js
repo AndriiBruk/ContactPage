@@ -1,20 +1,21 @@
 let map;
 let service;
 
-export function initMap(query) {
-  const kyivCoordinates = new google.maps.LatLng(50.4021702,30.3926088);
+export function mapInit(query) {
+
   map = new google.maps.Map(document.querySelector('.stores-map'), {
-    /*center: kyivCoordinates,*/
     zoom: 15,
   });
 
-  
-  const request = {
-    query: query,
-    fields: ["name", "geometry"],
-  };
+
+  const request = getRequest(query);
 
   service = new google.maps.places.PlacesService(map);
+  showWarehouseOnMap(request);
+}
+
+export function showWarehouseOnMap(request) {
+
   service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       for (let i = 0; i < results.length; i++) {
@@ -32,4 +33,13 @@ function createMarker(place) {
     position: place.geometry.location,
     icon: 'img/pin.svg'
   });
+}
+
+export function getRequest(query) {
+  const request = {
+    query: query,
+    fields: ["name", "geometry"],
+  }
+
+  return request;
 }

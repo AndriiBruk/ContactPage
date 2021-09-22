@@ -29,11 +29,11 @@ const getTemplate = (data = []) => {
 }
 
 export class SelectItem {
-    constructor(selector, options) {
+    constructor(selector, data) {
         this.element = document.querySelector(selector)
-        this.options = options.data
+        this.data = data
 
-        this.element.innerHTML = getTemplate(this.options)
+        this.element.innerHTML = getTemplate(this.data)
     }
   
 }
